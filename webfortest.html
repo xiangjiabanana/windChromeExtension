@@ -1,0 +1,28 @@
+hello world!
+<html>
+	<head>
+		<script type="text/javascript">
+			//alert("ssss");
+			//showMessage("你好啊！");
+			
+			
+			var customEvent = document.createEvent('Event');
+			customEvent.initEvent('myCustomEvent', true, true);
+
+			function fireCustomEvent(data) {
+			  hiddenDiv = document.getElementById('extentionMessagerDiv');
+			  hiddenDiv.innerText = data
+			  hiddenDiv.dispatchEvent(customEvent);
+			  alert("fasong!");
+			}
+			
+			function showMessage()
+			{
+				fireCustomEvent("来自网页的消息COME ON!");
+			}
+		</script>
+	</head>
+	<body onload="showMessage()">
+		<div id="extentionMessagerDiv" style="display:none;">这里是中间通讯器</div>
+	</body>
+</html>

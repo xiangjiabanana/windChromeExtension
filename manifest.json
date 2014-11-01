@@ -1,0 +1,23 @@
+﻿{
+  "name": "风云无双辅助",
+  "description": "这是一款风云无双游戏辅助应用。",
+  "version": "0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "fengyun16.png", // optional 
+    "default_title": "风云无双辅助",      // optional; shown in tooltip 
+    "default_popup": "popup.html"        // optional 
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches":["http://168.168.8.182/*","http://*/*"],     
+      "js": ["content_script.js"],
+	  "run_at":"document_end"
+    }
+  ],
+  "permissions": ["storage" ,"<all_urls>","notifications"],
+  "icons": { "16": "fengyun16.png", "128": "fengyun128.png" }
+}
